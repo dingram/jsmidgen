@@ -1,0 +1,22 @@
+{
+  "name": "jsmidgen",
+  "version": "0.1.0",
+  "author": "Dave Ingram <npm@dmi.me.uk>",
+  "description": "a pure-JavaScript MIDI file generator",
+  "main": "./jsmidgen.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dingram/jsmidgen.git"
+  },
+  "keywords": [
+    "midi",
+    "mid",
+    "generate",
+    "generator",
+    "library"
+  ],
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6",
+  }
+}
