@@ -1,4 +1,4 @@
-var Midi = require('./jsmidgen.js');
+var Midi = require('../lib/jsmidgen.js');
 var fs = require('fs');
 
 var file = new Midi.File();
