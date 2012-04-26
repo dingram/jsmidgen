@@ -42,31 +42,31 @@ This library also has rudimentary support for a fluid (chained) style:
     file
       .addTrack()
     
-        .addNote(0, 'c4', 32)
-        .addNote(0, 'd4', 32)
-        .addNote(0, 'e4', 32)
-        .addNote(0, 'f4', 32)
-        .addNote(0, 'g4', 32)
-        .addNote(0, 'a4', 32)
-        .addNote(0, 'b4', 32)
-        .addNote(0, 'c5', 32)
+        .note(0, 'c4', 32)
+        .note(0, 'd4', 32)
+        .note(0, 'e4', 32)
+        .note(0, 'f4', 32)
+        .note(0, 'g4', 32)
+        .note(0, 'a4', 32)
+        .note(0, 'b4', 32)
+        .note(0, 'c5', 32)
     
         // church organ
-        .setInstrument(0, 0x13)
+        .instrument(0, 0x13)
     
-        .addNoteOn(0, 'c4', 64)
-        .addNoteOn(0, 'e4')
-        .addNoteOn(0, 'g4')
-        .addNoteOff(0, 'c4', 47)
-        .addNoteOff(0, 'e4')
-        .addNoteOff(0, 'g4')
+        .noteOn(0, 'c4', 64)
+        .noteOn(0, 'e4')
+        .noteOn(0, 'g4')
+        .noteOff(0, 'c4', 47)
+        .noteOff(0, 'e4')
+        .noteOff(0, 'g4')
     
-        .addNoteOn(0, 'c4', 1)
-        .addNoteOn(0, 'e4')
-        .addNoteOn(0, 'g4')
-        .addNoteOff(0, 'c4', 384)
-        .addNoteOff(0, 'e4')
-        .addNoteOff(0, 'g4')
+        .noteOn(0, 'c4', 1)
+        .noteOn(0, 'e4')
+        .noteOn(0, 'g4')
+        .noteOff(0, 'c4', 384)
+        .noteOff(0, 'e4')
+        .noteOff(0, 'g4')
         ;
     
     fs.writeFileSync('test2.mid', file.toBytes(), 'binary');
@@ -82,6 +82,10 @@ and the use of `addNoteOn()`/`addNoteOff()` to produce chords.
  - `addTrack(track)` - Add the given Track object to the file and return the file
 
 ### Midi.Track
+
+Note: time and duration are specified in "ticks", and there is a hardcoded
+value of 128 ticks per beat. This means that a quarter note has a duration of
+128.
 
  - `addNote(channel, pitch, duration[, time[, velocity]])`
    
@@ -101,4 +105,8 @@ and the use of `addNoteOn()`/`addNoteOff()` to produce chords.
  - `setInstrument(channel, instrument[, time])`
    
    **Change the given channel to the given instrument**
+   - If `time` is given, delay that many ticks before making the change
+ - `setTempo(bpm[, time])`
+   
+   **Set the tempo to `bpm` beats per minute**
    - If `time` is given, delay that many ticks before making the change
