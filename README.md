@@ -54,9 +54,11 @@ This library also has rudimentary support for a fluid (chained) style:
         // church organ
         .instrument(0, 0x13)
     
+        // by skipping the third arguments, we create a chord (C major)
         .noteOn(0, 'c4', 64)
         .noteOn(0, 'e4')
         .noteOn(0, 'g4')
+        // by skipping the third arguments again, we stop all notes at once
         .noteOff(0, 'c4', 47)
         .noteOff(0, 'e4')
         .noteOff(0, 'g4')
