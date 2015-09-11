@@ -60,8 +60,8 @@ test('Midi -> Util -> noteFromMidiPitch', function(t) {
 	t.equal(noteFromMidiPitch(104), 'g#7' , 'Note for Midi pitch 104 is g#7')
 
 	// Check with returnFlattened set to true
-	t.equal(noteFromMidiPitch(34, true), 'bb1' , 'Note for Midi pitch 34 is a#1')
-	t.equal(noteFromMidiPitch(63, true), 'eb4' , 'Note for Midi pitch 63 is d#4')
+	t.equal(noteFromMidiPitch(34, true), 'bb1' , 'Note for Midi pitch 34 is bb1')
+	t.equal(noteFromMidiPitch(63, true), 'eb4' , 'Note for Midi pitch 63 is eb4')
 	t.end();
 });
 
