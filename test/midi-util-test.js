@@ -33,6 +33,14 @@ test('Midi pitchFromNote', function(t) {
 	// Check pitch with flattened notes
 	t.equal(pitchFromNote('bb1'), 34, 'Pitch of a#1 is 34');
 	t.equal(pitchFromNote('eb4'), 63, 'Pitch of d#4 is 63');
+
+	// Check pitch with unconventional notes
+	t.equal(pitchFromNote('fb4'), 64, 'Pitch for unconventional note fb4 is the same as e4');
+	t.equal(pitchFromNote('e#4'), 65, 'Pitch for unconventional note e#4 is the same as f4');
+
+	// Check pitch with cross octave numbers
+	t.equal(pitchFromNote('b#2'), 48, 'Pitch for b#2 is the same as c3');
+	t.equal(pitchFromNote('cb3'), 47, 'Pitch for cb3 is the same as b2');
 	t.end();
 });
 
