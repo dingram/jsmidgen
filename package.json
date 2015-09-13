@@ -4,6 +4,9 @@
   "author": "Dave Ingram <npm@dmi.me.uk>",
   "description": "a pure-JavaScript MIDI file generator",
   "main": "./lib/jsmidgen.js",
+  "scripts": {
+	  "test": "node ./test/midi-util-test.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dingram/jsmidgen.git"
@@ -18,5 +21,8 @@
   "license": "MIT",
   "engine": {
     "node": ">=0.6"
+  },
+  "devDependencies": {
+    "tape": "^4.2.0"
   }
 }
