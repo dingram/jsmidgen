@@ -5,7 +5,7 @@
   "description": "a pure-JavaScript MIDI file generator",
   "main": "./lib/jsmidgen.js",
   "scripts": {
-	  "test": "node ./test/midi-util-test.js"
+	  "test": "node ./test/midi-util-test.js && node ./test/file-test.js"
   },
   "repository": {
     "type": "git",
