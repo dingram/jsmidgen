@@ -4,21 +4,22 @@ var file  = new jsmidgen.File();
 
 
 test('File -> setTicks should set the correct HDR_SPEED on valid input', function(t) {
-	file.setTicks(128);
-	t.equal(file.HDR_SPEED, '\x00\x80', '128 ticks should translate to \x00\x80');
-
 	file.setTicks(1000);
-	t.equal(file.HDR_SPEED, '\x03\xe8', '1000 ticks should translate to \x03\xe8');
+	t.equal(file.ticks, 1000, 'ticks should be set to 1000');
 
 	t.end();
 });
 
-test('File -> setTicks should return on invalid input', function(t) {
-	file.setTicks();
-	t.equal(file.HDR_SPEED, '\x03è', 'setTicks should return on empty input');
-
-	file.setTicks('not a number');
-	t.equal(file.HDR_SPEED, '\x03è', 'setTicks should return on invalid input');
+test('File -> setTicks should throw error on invalid input ', function(t) {
+	t.throws(function() {
+		file.setTicks()
+	});
+	t.throws(function() {
+		file.setTicks('not a number')
+	});
+	t.throws(function() {
+		file.setTicks(85000)
+	});
 
 	t.end();
 });
