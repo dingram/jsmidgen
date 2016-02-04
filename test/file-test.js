@@ -22,5 +22,11 @@ test('File -> setTicks should throw error on invalid input ', function(t) {
 		});
 	});
 
+	t.throws(function() {
+		new jsmidgen.File({
+			ticks: 133.7
+		});
+	});
+
 	t.end();
 });
