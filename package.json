@@ -5,7 +5,7 @@
   "description": "a pure-JavaScript MIDI file generator",
   "main": "./lib/jsmidgen.js",
   "scripts": {
-	  "test": "node ./test/midi-util-test.js && node ./test/file-test.js"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
     "node": ">=0.6"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-tape": "0.0.7",
     "tape": "^4.2.0"
   }
 }
