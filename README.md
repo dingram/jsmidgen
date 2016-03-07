@@ -110,6 +110,7 @@ value of 128 ticks per beat. This means that a quarter note has a duration of 12
  - `addChord(channel, chord[, velocity])`
 
    **Add a chord with the given channel and pitches**
+   - Accepts an array of pitches to play as a chord
    - If `velocity` is given, strike the chord with that velocity
  - `setInstrument(channel, instrument[, time])`
 
