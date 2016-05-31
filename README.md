@@ -89,8 +89,11 @@ and the use of `addNoteOn()`/`addNoteOff()` to produce chords.
 
 ### Midi.Track
 
-Note: time and duration are specified in "ticks", and there is a hardcoded
+Time and duration are specified in "ticks", and there is a hardcoded
 value of 128 ticks per beat. This means that a quarter note has a duration of 128.
+
+Pitch can be specified by note name with octave (`a#4`) or by note number (`60`).
+Middle C is represented as `c4` or `60`.
 
  - `addNote(channel, pitch, duration[, time[, velocity]])`
 
