@@ -110,9 +110,9 @@ Middle C is represented as `c4` or `60`.
    **End a note with the given channel and pitch**
    - If `time` is given, delay that many ticks before ending the note
    - If `velocity` is given, strike the note with that velocity
- - `addChord(channel, chord[, velocity])`
+ - `addChord(channel, chord, duration[, velocity])`
 
-   **Add a chord with the given channel and pitches**
+   **Add a chord with the given channel, pitches, and duration**
    - Accepts an array of pitches to play as a chord
    - If `velocity` is given, strike the chord with that velocity
  - `setInstrument(channel, instrument[, time])`
