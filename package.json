@@ -1,6 +1,6 @@
 {
   "name": "jsmidgen",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "Dave Ingram <npm@dmi.me.uk>",
   "description": "a pure-JavaScript MIDI file generator",
   "main": "./lib/jsmidgen.js",
@@ -23,8 +23,8 @@
     "node": ">=0.6"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-tape": "0.0.7",
-    "tape": "^4.2.0"
+    "gulp": "^5.0.1",
+    "gulp-tape": "^1.0.0",
+    "tape": "^5.9.0"
   }
 }

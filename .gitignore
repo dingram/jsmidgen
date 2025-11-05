@@ -19,3 +19,4 @@ coverage
 # Dependency directory
 node_modules
 
+/*.mid

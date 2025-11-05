@@ -6,4 +6,4 @@ gulp.task('test', function() {
 		.pipe(tape());
 });
 
-gulp.task('default', ['test']);
+gulp.task('default', gulp.parallel('test'));
