@@ -51,8 +51,9 @@ This library also has rudimentary support for a fluid (chained) style:
         .note(0, 'b4', 32)
         .note(0, 'c5', 32)
 
-        // church organ
-        .instrument(0, 0x13)
+        // switch channel 0 from grand piano (default instrument, number 0)
+        // to church organ (number 19)
+        .instrument(0, 19)
 
         // by skipping the third arguments, we create a chord (C major)
         .noteOn(0, 'c4', 64)
@@ -77,8 +78,11 @@ This library also has rudimentary support for a fluid (chained) style:
 
     fs.writeFileSync('test2.mid', file.toBytes(), 'binary');
 
-Note the use of `setInstrument()` to change to a church organ midway through,
-and the use of `noteOn()`/`noteOff()` to produce chords.
+Note the use of `instrument()` (which is an alias of
+`setInstrument()`) to change to a church organ
+midway through, and the use of
+`noteOn()`/`noteOff()` (aliases of
+`addNoteOn()`/`addNoteOff()`) to produce chords.
 
 ## Reference
 
@@ -126,7 +130,10 @@ Middle C is represented as `c4` or `60`.
    - If `velocity` is given, strike the chord with that velocity.
  - `setInstrument(channel, instrument[, time])`.
 
-   **Change the given channel to the given instrument**
+   **Change the given channel to the given instrument.** Channel numbers start at 0.
+   Because this is a low-level library, instrument numbers also start at zero. See
+   [Wikipedia](https://en.wikipedia.org/wiki/General_MIDI#Program_change_events)
+   for a standard list but remember to subtract one (e.g. trumpet would be 56).
    - If `time` is given, delay that many ticks before making the change.
  - `setTempo(bpm[, time])`
 
