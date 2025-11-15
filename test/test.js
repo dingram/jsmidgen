@@ -4,6 +4,7 @@ var fs = require('fs');
 var file = new Midi.File();
 var track = new Midi.Track();
 file.addTrack(track);
+track.setTimeSignature(4, 4);
 
 track.addNote(0, 'c4', 64);
 track.addNote(0, 'd4', 64);
