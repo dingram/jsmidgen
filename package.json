@@ -1,6 +1,6 @@
 {
   "name": "jsmidgen",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "Dave Ingram <npm@dmi.me.uk>",
   "description": "a pure-JavaScript MIDI file generator",
   "main": "./lib/jsmidgen.js",
